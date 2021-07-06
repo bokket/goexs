@@ -1,0 +1,3 @@
+- name: Setup Apache HDFS
+  uses: beyondstorage/setup-hdfs@v0.0.1
+
