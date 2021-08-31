@@ -23,10 +23,6 @@ jobs:
     strategy:
       matrix:
         go: [ "1.15", "1.16" ]
-        hdfs-version:
-          - 3.2.2
-          - 3.3.0
-          - 3.3.1
         os: [ ubuntu-latest ]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -49,8 +45,8 @@ jobs:
       - name: Setup-hdfs env
         uses: beyondstorage/setup-hdfs@master
         with:
-          hdfs-version: ${{ matrix.hdfs-version }}
-
+          hdfs-version: "3.3.1"
+          
       - run: curl ${namenode-addr}
 
       # Runs a single command using the runners shell
